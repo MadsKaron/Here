@@ -6,6 +6,7 @@
 	
         <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiLsxTu726J0qJcKG-mRR-A6Ic8UHBsCw&callback=initMap"></script>
+        
     </head>
 	<body>
 		<div class="container" id ="page-container">
@@ -17,11 +18,38 @@
 			<h2 id="page-header">
 				Mark simply and make assure your meeting spot with friends. 
 			</h2>
-			
 
+            
             <div id="map">#map</div> 
+            <div class="floating" id="floating-panel">
+            <input id="clear-markers" onclick="clearMarkers();" type=button value="Hide Markers">
+            <input id="show-markers" onclick="showMarkers();" type =button value="Show All Markers">
+            <input id="delete-markers" onclick="deleteMarkers();" type=button value="Delete Markers">
+            </div>
         </div>
 
+<!-- 여기서부터 페이스북로그인페이지-->
+      
+            <script>
+                window.fbAsyncInit = function() {
+                FB.init({
+                appId      : '1095028823908447',
+                xfbml      : true,
+                version    : 'v2.7'
+                });
+                };
+
+                (function(d, s, id){
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) {return;}
+                    js = d.createElement(s); js.id = id;
+                    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.7&appId=1095028823908447";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+                </script>
+      
+        <div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
+<!-- 여기까지 페이스북로그인페이지-->
         
         <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="./css/style.css">
@@ -29,10 +57,8 @@
         <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         
         <script src="./js/basic.js"></script>
+        <!-- <script src="./js/basic.js"></script> -->
 
-   
-
-    
     
   </body>
 </html>

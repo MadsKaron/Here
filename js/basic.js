@@ -1,8 +1,8 @@
 
 var map=$("#map");
 var limit = 0; 
-var markers = {};
-
+var markers =[];
+var labels='12345'; 
 
 
 function initMap() {
@@ -10,41 +10,47 @@ function initMap() {
     center: {lat: -36.850, lng: 174.763}, //-36.850942, 174.763904
     zoom: 14
   });
-
-  marker = new google.maps.Marker({
-    position: location,
-    map: map,
-    
-  });
-
-
-  google.maps.event.addListener(map,"click",function(event){
-    
+  
+  google.maps.event.addListener(map,"click",function(event){ 
     addMarker(event.latLng, map)
   });
 
-  google.maps.event.addListener("dbclick",function(){
-    marker.setMap(null);
-  });
 
-}; 
-
+} 
 
 function addMarker(location, map){
-  var marker = new google.maps.Marker({
-    position: location,
-    label: "?",
-    map: map
-  })
+  if(limit<5){
+    var marker = new google.maps.Marker({  
+     position: location,
+     draggable: true,
+     label: labels[limit],
+     map: map
+    });
+    markers.push(marker);
+    limit++;
+  }else{
+    alert("The limit of marker is 5"); 
+  }
 };
 
-//google.maps.event.addDomListener(window,'load',initMap);
-/*
-function placeMarkerAndPanTo(latlng, map){
-  var marker = new google.maps.Marker({
-    positon: latlng,
-    map: map
-  })
-  map.panTo(latlng); 
+function setMapOnAll(map){
+  for(var i=0;i<markers.length; i++){
+    markers[i].setMap(map); 
+  }
 };
-*/
+
+function clearMarkers(){
+  setMapOnAll(null); 
+};
+
+function showMarkers(){
+  setMapOnAll(map); 
+};
+
+function deleteMarkers(){
+  clearMarkers();
+  markers =[]; 
+  limit=0; 
+}
+//google.maps.event.addDomListener(window,'load',initMap);
+
