@@ -3,16 +3,22 @@
 	<head>
         <meta charset = "utf-8">  
 		<title>Here!</title>
-	
+	    <script src="https://apis.google.com/js/client.js?onload=listMarkers"></script> 
+    
         <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiLsxTu726J0qJcKG-mRR-A6Ic8UHBsCw&callback=initMap"></script>
-        
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiLsxTu726J0qJcKG-mRR-A6Ic8UHBsCw&callback=initMap"></script>    
+       <!--여기서부터 헤드끝나기까지 부트스트랩(responsive)-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      
     </head>
 	<body>
 		<div class="container" id ="page-container">
 			<h1 id="app-name">
-                <span class ="image/placeholder (1).png"></span> <!--왜 이미지가 안뜨냐.... -->
                  Here!
+            <span src ="image/placeholder (1).png"></span> <!--왜 이미지가 안뜨냐.... -->
 			</h1>
 			
 			<h2 id="page-header">
@@ -25,11 +31,24 @@
             <input id="clear-markers" onclick="clearMarkers();" type=button value="Hide Markers">
             <input id="show-markers" onclick="showMarkers();" type =button value="Show All Markers">
             <input id="delete-markers" onclick="deleteMarkers();" type=button value="Delete Markers">
+            
+            <input id="Finish-markers" onclick="getMarkerPosition();" type=button value="Markers location">
             </div>
+            
+
+            <p>The markers' locations are: </p>
+            
+
+            <pre id="output1"></pre>
+            <pre id="output2"></pre>
+            <pre id="output3"></pre>
+            <pre id="output4"></pre>
+            <pre id="output5"></pre>
+
         </div>
 
-<!-- 여기서부터 페이스북로그인페이지-->
-      
+            <!-- 여기서부터 페이스북로그인페이지-->
+
             <script>
                 window.fbAsyncInit = function() {
                 FB.init({
@@ -49,7 +68,8 @@
                 </script>
       
         <div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
-<!-- 여기까지 페이스북로그인페이지-->
+        <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+        <!-- 여기까지 페이스북로그인페이지-->
         
         <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="./css/style.css">
@@ -57,7 +77,7 @@
         <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         
         <script src="./js/basic.js"></script>
-        <!-- <script src="./js/basic.js"></script> -->
+        
 
     
   </body>
