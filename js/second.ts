@@ -20,7 +20,7 @@ export class initializeMap {
             //this.map.getProjection().fromPointToLatLng(new google.maps.Point(event.currentTarget.));
             this.addMarker(event.latLng, this.map);
         }); 
-        /*
+        /* 
         google.maps.event.addListener(this.map, 'click', ()=>{
             var marker = new google.maps.Marker({
                 position: this.map.event.currentTarget,
