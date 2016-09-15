@@ -1,7 +1,7 @@
 @charset "utf-8"; 
 
-html{
-    background: url("http://theme.dima-lab.com/okab/images/landing-page-iphone/blurred-home-bg.jpg") no-repeat center center fixed;
+body{
+    background: url("http://www.fullhdwpp.com/wp-content/uploads/Under-the-sea_www.FullHDWpp.com_www.FullHDWpp.com_.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -11,7 +11,10 @@ html{
 h1#app-name {
     font-size:84px;
 }
-
+.btn-markers{
+    padding:5px 0;
+    color: black;
+}
 
 #map{
  width: 100%;
@@ -20,4 +23,12 @@ h1#app-name {
 
 body {
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+  color: white;
+}
+
+.fb-login-button {
+    padding: 10px 0;
+}
+.fb-like {
+    padding: 10px 0;
 }

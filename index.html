@@ -3,22 +3,28 @@
 	<head>
         <meta charset = "utf-8">  
 		<title>Here!</title>
-	    <script src="https://apis.google.com/js/client.js?onload=listMarkers"></script> 
-    
+        
+	    <script src="https://apis.google.com/js/client.js?onload=listMarkers"></script>     
         <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiLsxTu726J0qJcKG-mRR-A6Ic8UHBsCw&callback=initMap"></script>    
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiLsxTu726J0qJcKG-mRR-A6Ic8UHBsCw&callback=initialize"></script> 
+         
        <!--여기서부터 헤드끝나기까지 부트스트랩(responsive)-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      
+       <!--여기까지 부트스트랩 --> 
+       <script type "text/javascript">
+            function initialize(){
+                var start = new initializeMap();  
+            }
+        </script>
     </head>
 	<body>
 		<div class="container" id ="page-container">
 			<h1 id="app-name">
                  Here!
-            <span src ="image/placeholder (1).png"></span> <!--왜 이미지가 안뜨냐.... -->
+            <span src ="./image/placeholder (1).png"></span> <!--왜 이미지가 안뜨냐.... -->
 			</h1>
 			
 			<h2 id="page-header">
@@ -26,13 +32,13 @@
 			</h2>
 
             
-            <div id="map">#map</div> 
-            <div class="floating" id="floating-panel">
-            <input id="clear-markers" onclick="clearMarkers();" type=button value="Hide Markers">
-            <input id="show-markers" onclick="showMarkers();" type =button value="Show All Markers">
-            <input id="delete-markers" onclick="deleteMarkers();" type=button value="Delete Markers">
+            <div id="map">map</div> 
+            <div class="btn-markers" id="floating-panel">
+            <!--<input id="clear-markers" onclick="initializeMap.prototype.clearMarkers();" type=button value="Hide Markers">
+            <input id="show-markers" onclick="initializeMap.prototype.showMarkers();" type =button value="Show All Markers">-->
+            <input id="delete-markers" onclick="initializeMap.prototype.deleteMarkers();" type=button value="Delete Markers">
             
-            <input id="Finish-markers" onclick="getMarkerPosition();" type=button value="Markers location">
+            <input id="Finish-markers" onclick="initializeMap.prototype.getMarkerPosition();" type=button value="Markers location">
             </div>
             
 
@@ -45,6 +51,7 @@
             <pre id="output4"></pre>
             <pre id="output5"></pre>
 
+        <center>    
         </div>
 
             <!-- 여기서부터 페이스북로그인페이지-->
@@ -69,6 +76,7 @@
       
         <div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
         <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+        </center>        
         <!-- 여기까지 페이스북로그인페이지-->
         
         <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -76,8 +84,11 @@
         <script src="./node_modules/jquery/dist/jquery.min.js"></script>
         <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         
-        <script src="./js/basic.js"></script>
-        
+        <script src="./js/second.js"></script>  
+
+        <!-- 
+        <script src="./js/basic.js"></script>  
+        -->
 
     
   </body>
